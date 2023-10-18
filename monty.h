@@ -48,8 +48,12 @@ int monty(char *filename, stack_t **stack);
 void handle_operations(
 	stack_t **stack, char *operation, unsigned int line_number);
 void free_nodes(stack_t **stack);
-
+/* ====================== push functions ======================*/
 void push(stack_t **stack, unsigned int line_number);
+void update_stack(stack_t **stack, stack_t *new_node);
+int parse_value(char *operation, unsigned int line_number);
+stack_t *create_new_node(int value);
+/*=============================================================*/
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
