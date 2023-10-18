@@ -45,7 +45,8 @@ typedef struct instruction_s
 } instruction_t;
 
 int monty(char *filename, stack_t **stack);
-void handle_operations(stack_t **stack, char *operation, unsigned int line_number);
+void handle_operations(
+	stack_t **stack, char *operation, unsigned int line_number);
 void free_nodes(stack_t **stack);
 
 void push(stack_t **stack, unsigned int line_number);

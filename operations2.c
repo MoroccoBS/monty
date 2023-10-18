@@ -56,7 +56,7 @@ void sub(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * div - divides the second element of the stack by the top element.
+ * divide - divides the second element of the stack by the top element.
  * @stack: double pointer to the first node
  * @line_number: line number of the operation
  * Return: void

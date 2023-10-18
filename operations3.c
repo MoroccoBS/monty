@@ -1,7 +1,8 @@
 #include "monty.h"
 
 /**
- * mod - computes the remainder of dividing the second element of the stack by the top element.
+ * mod - computes the remainder of dividing the
+ * second element of the stack by the top element.
  * @stack: double pointer to the first node
  * @line_number: line number of the operation
  * Return: void
@@ -28,7 +29,8 @@ void mod(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * pchar - prints the character corresponding to the ASCII value at the top of the stack.
+ * pchar - prints the character corresponding
+ * to the ASCII value at the top of the stack.
  * @stack: Double pointer to the head of the stack.
  * @line_number: Line number of the opcode being executed.
  * Return: void
@@ -53,7 +55,8 @@ void pchar(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * pstr - prints the string of characters corresponding to the ASCII values in the stack.
+ * pstr - prints the string of characters
+ * corresponding to the ASCII values in the stack.
  * @stack: Double pointer to the head of the stack.
  * @line_number: Line number of the opcode being executed.
  */
@@ -63,7 +66,8 @@ void pstr(stack_t **stack, unsigned int line_number)
 
 	(void)(line_number);
 
-	while (current != NULL && current->n != 0 && current->n >= 0 && current->n <= 127)
+	while (
+		current != NULL && current->n != 0 && current->n >= 0 && current->n <= 127)
 	{
 		printf("%c", current->n);
 		current = current->next;
@@ -100,7 +104,8 @@ void rotl(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * rotr - rotates the stack to the bottom, moving the bottom element to the top.
+ * rotr - rotates the stack to the bottom,
+ * moving the bottom element to the top.
  * @stack: Double pointer to the head of the stack.
  * @line_number: Line number of the opcode being executed.
  */

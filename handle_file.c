@@ -30,6 +30,7 @@ int monty(char *filename, stack_t **stack)
 	while ((read = getline(&line, &len, file)) != -1)
 	{
 		char *opcode = strtok(line, " \t\n");
+
 		line_number++;
 		if (opcode)
 		{

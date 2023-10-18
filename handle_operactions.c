@@ -8,7 +8,8 @@
  * Return: void
  */
 
-void handle_operations(stack_t **stack, char *operation, unsigned int line_number)
+void handle_operations(
+	stack_t **stack, char *operation, unsigned int line_number)
 {
 	size_t i;
 	instruction_t all_operations[] = {
