@@ -67,7 +67,7 @@ void pall(stack_t **stack, unsigned int line_number)
 		current = current->next;
 	}
 	*/
-	stack_t *tmp;
+	/*stack_t *tmp;
 
 	(void)line_number;
 	if (stack == NULL)
@@ -77,6 +77,14 @@ void pall(stack_t **stack, unsigned int line_number)
 	{
 		printf("%d\n", tmp->n);
 		tmp = tmp->next;
+	}*/
+	stack_t *element = *stack;
+
+	(void)(line_number);
+	while (element != NULL)
+	{
+		printf("%d\n", element->n);
+		element = element->next;
 	}
 }
 
