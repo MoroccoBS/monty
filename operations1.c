@@ -37,7 +37,8 @@ void push(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	value = parse_value(operation, line_number);
+	/* value = parse_value(operation, line_number);*/
+	value = atoi(operation);
 	new_node->n = value;
 	new_node->prev = NULL;
 	new_node->next = *stack;
