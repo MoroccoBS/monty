@@ -9,19 +9,6 @@
 
 void push(stack_t **stack, unsigned int line_number)
 {
-	/*char *operation = strtok(NULL, " \t\n");
-	int value;
-	stack_t *new_node;
-
-	if (operation == NULL)
-	{
-		fprintf(stderr, "L%u: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
-	}
-
-	value = parse_value(operation, line_number);
-	new_node = create_new_node(value);
-	update_stack(stack, new_node);*/
 	stack_t *new_node = malloc(sizeof(stack_t));
 	char *operation;
 	int value;
@@ -37,8 +24,7 @@ void push(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	/* value = parse_value(operation, line_number);*/
-	value = atoi(operation);
+	value = parse_value(operation, line_number);
 	new_node->n = value;
 	new_node->prev = NULL;
 	new_node->next = *stack;
@@ -56,29 +42,6 @@ void push(stack_t **stack, unsigned int line_number)
 
 void pall(stack_t **stack, unsigned int line_number)
 {
-	/** (void)(stack);
-	printf("%d\n", line_number);
-	stack_t *current = *stack;
-
-	(void)(line_number);
-
-	while (current != NULL)
-	{
-		printf("%d\n", current->n);
-		current = current->next;
-	}
-	*/
-	/*stack_t *tmp;
-
-	(void)line_number;
-	if (stack == NULL)
-		exit(EXIT_FAILURE);
-	tmp = *stack;
-	while (tmp != NULL)
-	{
-		printf("%d\n", tmp->n);
-		tmp = tmp->next;
-	}*/
 	stack_t *element = *stack;
 
 	(void)(line_number);
