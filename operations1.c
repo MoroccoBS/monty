@@ -15,7 +15,7 @@ void push(stack_t **stack, unsigned int line_number)
 
 	if (operation == NULL)
 	{
-		printf("L%u: usage: push integer\n", line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
@@ -55,7 +55,7 @@ void pint(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)
 	{
-		printf("L%u: can't pint if stack is empty\n", line_number);
+		fprintf(stderr, "L%u: can't pint if stack is empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", (*stack)->n);
@@ -74,7 +74,7 @@ void pop(stack_t **stack, unsigned int line_number)
 
 	if (stack == NULL || *stack == NULL)
 	{
-		printf("L%u: can't pop if stack is empty\n", line_number);
+		fprintf(stderr, "L%u: can't pop if stack is empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
@@ -101,7 +101,7 @@ void swap(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		printf("L%u: can't swap stack has less than 2 elements\n", line_number);
+		fprintf(stderr, "L%u: can't swap stack has less than 2 elements\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 

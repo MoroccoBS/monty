@@ -41,7 +41,7 @@ void handle_operations(
 
 	if (strlen(operation) != 0 && operation[0] != '#')
 	{
-		printf("L%u: unknown instruction %s\n", line_number, operation);
+		fprintf(stderr, "L%u: unknown instruction %s\n", line_number, operation);
 		exit(EXIT_FAILURE);
 	}
 }
