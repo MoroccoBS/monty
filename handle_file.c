@@ -31,11 +31,22 @@ int monty(char *filename, stack_t **stack)
 	{
 		char *opcode = strtok(line, " \t\n");
 
-		line_number++;
-		if (opcode)
+		if (strcmp(opcode, "#") == 0)
 		{
-			handle_operations(stack, opcode, line_number);
+			continue;
 		}
+		if (strcmp(opcode, "monty") == 0)
+		{
+			continue;
+		}
+		if (strcmp(opcode, "exit") == 0)
+		{
+			free(line);
+			fclose(file);
+			return (EXIT_SUCCESS);
+		}
+		line_number++;
+		handle_operations(stack, opcode, line_number);
 	}
 	free(line);
 	fclose(file);
