@@ -9,7 +9,7 @@
 
 int monty(char *filename, stack_t **stack)
 {
-	char *line = NULL;
+	char *line = NULL, *opcode = NULL;
 	size_t len = 0;
 	int line_number = 0;
 	ssize_t read;
@@ -29,24 +29,13 @@ int monty(char *filename, stack_t **stack)
 
 	while ((read = getline(&line, &len, file)) != -1)
 	{
-		char *opcode = strtok(line, " \t\n");
+		opcode = strtok(line, " \t\n");
 
-		if (strcmp(opcode, "#") == 0)
-		{
-			continue;
-		}
-		if (strcmp(opcode, "monty") == 0)
-		{
-			continue;
-		}
-		if (strcmp(opcode, "exit") == 0)
-		{
-			free(line);
-			fclose(file);
-			return (EXIT_SUCCESS);
-		}
 		line_number++;
-		handle_operations(stack, opcode, line_number);
+		if (opcode)
+		{
+			handle_operations(stack, opcode, line_number);
+		}
 	}
 	free(line);
 	fclose(file);

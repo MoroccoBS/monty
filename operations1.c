@@ -9,7 +9,7 @@
 
 void push(stack_t **stack, unsigned int line_number)
 {
-	char *operation = strtok(NULL, " \t\n");
+	/*char *operation = strtok(NULL, " \t\n");
 	int value;
 	stack_t *new_node;
 
@@ -21,7 +21,29 @@ void push(stack_t **stack, unsigned int line_number)
 
 	value = parse_value(operation, line_number);
 	new_node = create_new_node(value);
-	update_stack(stack, new_node);
+	update_stack(stack, new_node);*/
+	stack_t *new_node = malloc(sizeof(stack_t));
+	char *operation;
+	int value;
+
+	if (new_node == NULL)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
+	operation = strtok(NULL, " \t\n");
+	if (operation == NULL || stack == NULL)
+	{
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	value = parse_value(operation, line_number);
+	new_node->n = value;
+	new_node->prev = NULL;
+	new_node->next = *stack;
+	if (new_node->next != NULL)
+		new_node->next->prev = new_node;
+	*stack = new_node;
 }
 
 /**
