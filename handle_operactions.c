@@ -39,7 +39,6 @@ void handle_operations(
 		if (strcmp(operation, all_operations[i].opcode) == 0)
 		{
 			all_operations[i].f(stack, line_number);
-			printf("success\n");
 			return;
 		}
 	}
