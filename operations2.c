@@ -13,7 +13,7 @@ void add(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		printf("L%u: can't add stack has less than 2 elements\n", line_number);
+		fprintf(stderr, "L%u: can't add stack has less than 2 elements\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
@@ -47,7 +47,7 @@ void sub(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		printf("L%u: can't sub stack has less than 2 elements\n", line_number);
+		fprintf(stderr, "L%u: can't sub stack has less than 2 elements\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
@@ -68,13 +68,13 @@ void divide(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		printf("L%u: can't div stack has less than 2 elements\n", line_number);
+		fprintf(stderr, "L%u: can't div stack has less than 2 elements\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
 	if ((*stack)->n == 0)
 	{
-		printf("L%u: can't divide by zero\n", line_number);
+		fprintf(stderr, "L%u: can't divide by zero\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
@@ -95,7 +95,7 @@ void mul(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		printf("L%u: can't mul stack has less than 2 elements\n", line_number);
+		fprintf(stderr, "L%u: can't mul stack has less than 2 elements\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
