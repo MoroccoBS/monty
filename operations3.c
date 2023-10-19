@@ -14,7 +14,8 @@ void mod(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't mod stack has less than 2 elements\n", line_number);
+		fprintf(
+			stderr, "L%u: can't mod stack has less than 2 elements\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
