@@ -12,6 +12,7 @@ void handle_operations(
 	stack_t **stack, char *operation, unsigned int line_number)
 {
 	size_t i;
+
 	instruction_t all_operations[] = {
 		{"push", push},
 		{"pall", pall},
@@ -28,20 +29,20 @@ void handle_operations(
 		{"pstr", pstr},
 		{"rotl", rotl},
 		{"rotr", rotr},
-		{NULL, NULL}};
+	};
+
+	if (operation[0] == '#')
+		return;
 
 	for (i = 0; i < sizeof(all_operations) / sizeof(instruction_t); i++)
 	{
 		if (strcmp(operation, all_operations[i].opcode) == 0)
 		{
 			all_operations[i].f(stack, line_number);
+			printf("success\n");
 			return;
 		}
 	}
-
-	if (strlen(operation) != 0 && operation[0] != '#')
-	{
-		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, operation);
-		exit(EXIT_FAILURE);
-	}
+	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, operation);
+	return;
 }
