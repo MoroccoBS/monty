@@ -43,5 +43,4 @@ void handle_operations(
 		}
 	}
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, operation);
-	return;
 }
