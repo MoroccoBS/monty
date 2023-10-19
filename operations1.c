@@ -21,7 +21,7 @@ void push(stack_t **stack, unsigned int line_number)
 	operation = strtok(NULL, " \t\n");
 	if (operation == NULL || stack == NULL)
 	{
-		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	value = parse_value(operation, line_number);

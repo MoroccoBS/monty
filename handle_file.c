@@ -13,6 +13,7 @@ int monty(char *filename, stack_t **stack)
 	size_t len = 0;
 	int line_number = 0;
 	ssize_t read;
+	ssize_t read;
 	FILE *file;
 
 	if (!filename)
