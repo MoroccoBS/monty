@@ -37,7 +37,7 @@ int parse_value(char *operation, unsigned int line_number)
 
 	if (*endptr != '\0')
 	{
-		printf("L%u: usage: push integer\n", line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
