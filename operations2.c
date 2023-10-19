@@ -9,14 +9,16 @@
 
 void add(stack_t **stack, unsigned int line_number)
 {
-	int sum = (*stack)->n + (*stack)->next->n;
+	int sum;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(
-			stderr, "L%u: can't add stack has less than 2 elements\n", line_number);
+			stderr, "L%u: can't add, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
+
+	sum = (*stack)->n + (*stack)->next->n;
 
 	pop(stack, line_number);
 	(*stack)->n = sum;
@@ -49,7 +51,7 @@ void sub(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(
-			stderr, "L%u: can't sub stack has less than 2 elements\n", line_number);
+			stderr, "L%u: can't sub, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
@@ -71,13 +73,13 @@ void divide(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(
-			stderr, "L%u: can't div stack has less than 2 elements\n", line_number);
+			stderr, "L%u: can't div, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
 	if ((*stack)->n == 0)
 	{
-		fprintf(stderr, "L%u: can't divide by zero\n", line_number);
+		fprintf(stderr, "L%u: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
@@ -99,7 +101,7 @@ void mul(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(
-			stderr, "L%u: can't mul stack has less than 2 elements\n", line_number);
+			stderr, "L%u: can't mul, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
